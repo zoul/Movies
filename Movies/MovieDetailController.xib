@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailController" customModule="Movies" customModuleProvider="target">
             <connections>
+                <outlet property="posterImageView" destination="IUa-m2-7cY" id="f0B-1u-bbF"/>
                 <outlet property="ratingLabel" destination="WI7-Zc-iMO" id="EfB-FQ-Bks"/>
                 <outlet property="releaseDateLabel" destination="bmn-R6-kH3" id="MZJ-c3-GLT"/>
                 <outlet property="synopsisTextView" destination="WjK-EC-N82" id="39m-xN-N2g"/>
