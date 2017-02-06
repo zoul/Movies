@@ -11,5 +11,7 @@ class MovieTests: XCTestCase {
         XCTAssertEqual(movie?.title, "Suicide Squad")
         XCTAssertEqual(movie?.voteAverage, 5.91)
         XCTAssertEqual(movie?.posterPath, "/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg")
+        XCTAssertEqual(movie?.overview, "From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences.")
+        XCTAssertEqual(movie?.releaseDate, "2016-08-03")
     }
 }

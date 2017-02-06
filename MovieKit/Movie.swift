@@ -11,6 +11,8 @@ public struct Movie {
     public let title: String
     public let voteAverage: Float
     public let posterPath: String
+    public let releaseDate: String
+    public let overview: String
 }
 
 extension Movie: JSONDecodable {
@@ -20,8 +22,11 @@ extension Movie: JSONDecodable {
             let id = dict["id"] as? Int,
             let title = dict["title"] as? String,
             let voteAverage = dict["vote_average"] as? Float,
-            let posterPath = dict["poster_path"] as? String
+            let posterPath = dict["poster_path"] as? String,
+            let overview = dict["overview"] as? String,
+            let releaseDate = dict["release_date"] as? String
             else { return nil }
-        self.init(id: id, title: title, voteAverage: voteAverage, posterPath: posterPath)
+        self.init(id: id, title: title, voteAverage: voteAverage,
+            posterPath: posterPath, releaseDate: releaseDate, overview: overview)
     }
 }
