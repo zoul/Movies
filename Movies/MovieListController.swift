@@ -1,11 +1,11 @@
 import UIKit
 import MovieKit
 
-let showDetailsSegueID = "showDetails"
-
 class MovieListController: UITableViewController {
 
     var movies: [Movie] = []
+    let dataSource = PagedMovieList()
+    let lazyLoadTreshold = 10
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,17 +14,16 @@ class MovieListController: UITableViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let request = MovieListRequest(apiKey: "XXX")
-        request.send { result in
-            switch result {
-                case .success(let response):
-                    print("Received \(response.results.count) items, displaying.")
-                    DispatchQueue.main.async {
-                        self.movies = response.results
-                        self.tableView.reloadData()
-                    }
-                case .error(let msg):
-                    print(msg)
+        if movies.count == 0 {
+            loadNextPage()
+        }
+    }
+
+    func loadNextPage() {
+        dataSource.loadOneMorePage { _ in
+            DispatchQueue.main.async {
+                self.movies = self.dataSource.movies
+                self.tableView.reloadData()
             }
         }
     }
@@ -42,11 +41,17 @@ extension MovieListController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cellID = "movie"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         let movie = movies[indexPath.row]
         cell.textLabel?.text = movie.title
+
+        if indexPath.row >= movies.count - lazyLoadTreshold {
+            loadNextPage()
+        }
+
         return cell
     }
 }
