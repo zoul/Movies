@@ -21,6 +21,7 @@ public class MovieListRequest {
             let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(encodedApiKey)&page=\(pageNumber)")
             else { return nil }
         var request = URLRequest(url: url)
+        request.cachePolicy = .returnCacheDataElseLoad
         request.httpMethod = "GET"
         return request
     }

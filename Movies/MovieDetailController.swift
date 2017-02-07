@@ -32,17 +32,20 @@ class MovieDetailController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.global().async {
-            guard
-                let backdropURL = self.movie.backdropURL,
-                let data = try? Data(contentsOf: backdropURL),
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async {
-                UIView.transition(with: self.posterImageView, duration: 0.2, options: .transitionCrossDissolve, animations: {
-                    self.posterImageView.image = image
-                }, completion: nil)
+        if let backdropURL = movie.backdropURL {
+            UIImage.cachedImage(withURL: backdropURL) { image in
+                guard let image = image else { return }
+                self.posterImageView.setImageAnimated(image: image)
             }
         }
+    }
+}
+
+private extension UIImageView {
+
+    func setImageAnimated(image: UIImage) {
+        UIView.transition(with: self, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            self.image = image
+        }, completion: nil)
     }
 }
