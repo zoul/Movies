@@ -22,12 +22,12 @@ class MovieListController: UITableViewController {
     }
 
     func loadNextPage() {
-        dataSource.loadOneMorePage { newItemCount in
-            guard newItemCount > 0 else { return }
+        dataSource.loadOneMorePage { newItems in
+            guard let newItems = newItems else { return }
             DispatchQueue.main.async {
-                let insertedIndexes = self.movies.endIndex..<self.movies.endIndex+newItemCount
+                let insertedIndexes = self.movies.endIndex..<self.movies.endIndex+newItems.count
                 let indexPaths = insertedIndexes.map { IndexPath(row: $0, section: 0) }
-                self.movies = self.dataSource.movies
+                self.movies.append(contentsOf: newItems)
                 self.tableView.insertRows(at: indexPaths, with: .fade)
             }
         }
