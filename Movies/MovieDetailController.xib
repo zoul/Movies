@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FilmPlaceholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="IUa-m2-7cY">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FilmPlaceholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="IUa-m2-7cY">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="exZ-Hs-UOf"/>
