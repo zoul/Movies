@@ -12,6 +12,8 @@
 		0D2664681E48797400EC54C3 /* FilmPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2664671E48797400EC54C3 /* FilmPlaceholder.png */; };
 		0D26646A1E49CA2700EC54C3 /* PagedMovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2664691E49CA2700EC54C3 /* PagedMovieList.swift */; };
 		0D26646E1E49D68200EC54C3 /* ImageCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26646D1E49D68200EC54C3 /* ImageCaching.swift */; };
+		0D2664721E49DAF800EC54C3 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2664711E49DAF800EC54C3 /* MovieListCell.swift */; };
+		0D2664761E4A072800EC54C3 /* MovieListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2664751E4A072800EC54C3 /* MovieListCell.xib */; };
 		0D40F17F1E43334200B5D77B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D40F17E1E43334200B5D77B /* AppDelegate.swift */; };
 		0D40F1811E43334200B5D77B /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D40F1801E43334200B5D77B /* MovieListController.swift */; };
 		0D40F1861E43334200B5D77B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D40F1851E43334200B5D77B /* Assets.xcassets */; };
@@ -74,6 +76,8 @@
 		0D2664671E48797400EC54C3 /* FilmPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FilmPlaceholder.png; path = Movies/FilmPlaceholder.png; sourceTree = "<group>"; };
 		0D2664691E49CA2700EC54C3 /* PagedMovieList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PagedMovieList.swift; path = Movies/PagedMovieList.swift; sourceTree = "<group>"; };
 		0D26646D1E49D68200EC54C3 /* ImageCaching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaching.swift; sourceTree = "<group>"; };
+		0D2664711E49DAF800EC54C3 /* MovieListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieListCell.swift; path = Movies/MovieListCell.swift; sourceTree = "<group>"; };
+		0D2664751E4A072800EC54C3 /* MovieListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieListCell.xib; path = Movies/MovieListCell.xib; sourceTree = "<group>"; };
 		0D40F17B1E43334200B5D77B /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D40F17E1E43334200B5D77B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D40F1801E43334200B5D77B /* MovieListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieListController.swift; path = Movies/MovieListController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				0D2664691E49CA2700EC54C3 /* PagedMovieList.swift */,
+				0D2664711E49DAF800EC54C3 /* MovieListCell.swift */,
+				0D2664751E4A072800EC54C3 /* MovieListCell.xib */,
 				0D40F1801E43334200B5D77B /* MovieListController.swift */,
 				0D2664631E48717A00EC54C3 /* MovieListController.xib */,
 			);
@@ -295,6 +301,7 @@
 				TargetAttributes = {
 					0D40F17A1E43334200B5D77B = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7YM89DCY62;
 						ProvisioningStyle = Automatic;
 					};
 					0D40F1B21E4349D300B5D77B = {
@@ -335,6 +342,7 @@
 			files = (
 				0D2664681E48797400EC54C3 /* FilmPlaceholder.png in Resources */,
 				0D40F1891E43334200B5D77B /* LaunchScreen.storyboard in Resources */,
+				0D2664761E4A072800EC54C3 /* MovieListCell.xib in Resources */,
 				0D2664661E48728600EC54C3 /* MovieDetailController.xib in Resources */,
 				0D40F1861E43334200B5D77B /* Assets.xcassets in Resources */,
 				0D2664641E48717A00EC54C3 /* MovieListController.xib in Resources */,
@@ -364,6 +372,7 @@
 			files = (
 				0D26646E1E49D68200EC54C3 /* ImageCaching.swift in Sources */,
 				0D26646A1E49CA2700EC54C3 /* PagedMovieList.swift in Sources */,
+				0D2664721E49DAF800EC54C3 /* MovieListCell.swift in Sources */,
 				0D40F1E11E437E4600B5D77B /* MovieDetailController.swift in Sources */,
 				0D40F1811E43334200B5D77B /* MovieListController.swift in Sources */,
 				0D40F17F1E43334200B5D77B /* AppDelegate.swift in Sources */,
@@ -522,6 +531,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7YM89DCY62;
 				INFOPLIST_FILE = Movies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.zoul.Movies;
@@ -535,6 +545,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7YM89DCY62;
 				INFOPLIST_FILE = Movies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.zoul.Movies;

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="GR3-z6-qd5" customClass="MovieListCell" customModule="Movies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="245" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GR3-z6-qd5" id="BZP-ib-Aqn">
+                <rect key="frame" x="0.0" y="0.0" width="245" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cCX-5G-O27">
+                        <rect key="frame" x="8" y="8" width="43" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="cCX-5G-O27" secondAttribute="height" multiplier="1:1" id="m8i-NX-XHY"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Film Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ0-Sc-P7B">
+                        <rect key="frame" x="66" y="10" width="172" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Film Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-e6-QyY">
+                        <rect key="frame" x="66" y="28" width="172" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cCX-5G-O27" firstAttribute="top" secondItem="BZP-ib-Aqn" secondAttribute="topMargin" id="5Hh-tp-oqR"/>
+                    <constraint firstItem="eU6-e6-QyY" firstAttribute="top" secondItem="sJ0-Sc-P7B" secondAttribute="bottom" id="Kx4-rE-QF7"/>
+                    <constraint firstAttribute="topMargin" secondItem="sJ0-Sc-P7B" secondAttribute="top" constant="-2" id="cds-a5-8jY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eU6-e6-QyY" secondAttribute="trailing" constant="-1" id="dah-Jf-NU7"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="sJ0-Sc-P7B" secondAttribute="trailing" constant="-1" id="g85-hf-OX4"/>
+                    <constraint firstItem="cCX-5G-O27" firstAttribute="leading" secondItem="BZP-ib-Aqn" secondAttribute="leadingMargin" id="kzO-Za-22S"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="cCX-5G-O27" secondAttribute="bottom" id="ox0-T3-Gsj"/>
+                    <constraint firstItem="eU6-e6-QyY" firstAttribute="leading" secondItem="cCX-5G-O27" secondAttribute="trailing" constant="14.5" id="qXx-CZ-J7Y"/>
+                    <constraint firstItem="sJ0-Sc-P7B" firstAttribute="leading" secondItem="cCX-5G-O27" secondAttribute="trailing" constant="14.5" id="r8S-Nz-lq1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="ratingLabel" destination="eU6-e6-QyY" id="GN9-Sc-zBq"/>
+                <outlet property="thumbnailView" destination="cCX-5G-O27" id="tyY-5R-giZ"/>
+                <outlet property="titleLabel" destination="sJ0-Sc-P7B" id="Mlo-WG-3kf"/>
+            </connections>
+            <point key="canvasLocation" x="-174.5" y="-83"/>
+        </tableViewCell>
+    </objects>
+</document>
