@@ -1,0 +1,5 @@
+- Improve caching (detect offline mode instead of always prefering the cache)
+- Properly parse & format movie release dates
+- Add proper image backend support (size classes)
+- Load cached images immediately
+- Improve error reporting
