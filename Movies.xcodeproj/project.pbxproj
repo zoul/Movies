@@ -97,7 +97,6 @@
 		0D40F1B31E4349D300B5D77B /* MovieKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MovieKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D40F1B61E4349D300B5D77B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D40F1BB1E4349D300B5D77B /* MovieKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D40F1C21E4349D300B5D77B /* MovieKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieKitTests.swift; sourceTree = "<group>"; };
 		0D40F1C41E4349D300B5D77B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D40F1DF1E434B5E00B5D77B /* Movies.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Movies.playground; sourceTree = "<group>"; };
 		0D40F1E01E437E4600B5D77B /* MovieDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieDetailController.swift; path = Movies/MovieDetailController.swift; sourceTree = "<group>"; };
@@ -217,7 +216,6 @@
 		0D40F1C11E4349D300B5D77B /* MovieKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				0D40F1C21E4349D300B5D77B /* MovieKitTests.swift */,
 				0D40F1C41E4349D300B5D77B /* Info.plist */,
 			);
 			path = MovieKitTests;
