@@ -4,6 +4,8 @@ import MovieKit
 class SearchResultsController: UITableViewController {
 
     let cellID = "movie"
+
+    var didSelectMovie: (Movie) -> Void = { _ in }
     var movies: [Movie] = [] {
         didSet {
             tableView.reloadData()
@@ -40,8 +42,7 @@ extension SearchResultsController {
 extension SearchResultsController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = MovieDetailController(movie: movies[indexPath.row])
-        presentingViewController?.navigationController?.pushViewController(detailVC, animated: true)
+        didSelectMovie(movies[indexPath.row])
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

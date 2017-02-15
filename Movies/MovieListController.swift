@@ -4,6 +4,7 @@ import MovieKit
 class MovieListController: UITableViewController {
 
     var movies: [Movie] = []
+    var didSelectMovie: (Movie) -> Void = { _ in }
 
     let dataSource = PagedMovieList()
     let lazyLoadTreshold = 10
@@ -23,6 +24,12 @@ class MovieListController: UITableViewController {
         tableView.tableHeaderView = searchVC.searchBar
         definesPresentationContext = true
         extendedLayoutIncludesOpaqueBars = true
+
+        if let searchResultVC = searchVC.searchResultsController as? SearchResultsController {
+            searchResultVC.didSelectMovie = { movie in
+                self.didSelectMovie(movie)
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -105,8 +112,7 @@ extension MovieListController {
 extension MovieListController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = MovieDetailController(movie: movies[indexPath.row])
-        navigationController?.pushViewController(detailVC, animated: true)
+        didSelectMovie(movies[indexPath.row])
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

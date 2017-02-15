@@ -10,17 +10,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let megabytes = 1024*1024
         URLCache.shared = URLCache(memoryCapacity: 10*megabytes, diskCapacity: 20*megabytes, diskPath: nil)
 
-        let rootVC = MovieListController()
-        let navigationVC = UINavigationController(rootViewController: rootVC)
-
-        let navBar = navigationVC.navigationBar
-        navBar.barTintColor = UIColor(colorLiteralRed: 0, green: 175/255, blue: 1, alpha: 0)
-        navBar.tintColor = UIColor.white
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        navBar.isTranslucent = false
+        let app = App()
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationVC
+        window?.rootViewController = app.navigationVC
         window?.makeKeyAndVisible()
 
         return true
