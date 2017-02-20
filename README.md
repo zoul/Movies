@@ -1,0 +1,1 @@
+This is a simple [Movie DB](https://www.themoviedb.org) client for iPhones written in Swift. I use it mostly to try out new ideas and technologies.
