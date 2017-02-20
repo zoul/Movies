@@ -1,0 +1,4 @@
+language: objective-c
+osx_image: xcode8.2
+script:
+    - xcodebuild -project Movies.xcodeproj -scheme Movies -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=10.1' build test
