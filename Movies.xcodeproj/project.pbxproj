@@ -97,7 +97,6 @@
 		0D40F1B31E4349D300B5D77B /* MovieKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MovieKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D40F1B61E4349D300B5D77B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D40F1BB1E4349D300B5D77B /* MovieKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D40F1C41E4349D300B5D77B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D40F1DF1E434B5E00B5D77B /* Movies.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Movies.playground; sourceTree = "<group>"; };
 		0D40F1E01E437E4600B5D77B /* MovieDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieDetailController.swift; path = Movies/MovieDetailController.swift; sourceTree = "<group>"; };
 		0D7D75461E5B392500B475B8 /* WebServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceTests.swift; sourceTree = "<group>"; };
@@ -162,7 +161,6 @@
 				0D26646C1E49D66400EC54C3 /* Movie Detail */,
 				0D40F17D1E43334200B5D77B /* App */,
 				0D40F1B41E4349D300B5D77B /* MovieKit */,
-				0D40F1C11E4349D300B5D77B /* MovieKitTests */,
 				0D40F17C1E43334200B5D77B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -205,14 +203,6 @@
 				0D40F1B61E4349D300B5D77B /* Info.plist */,
 			);
 			path = MovieKit;
-			sourceTree = "<group>";
-		};
-		0D40F1C11E4349D300B5D77B /* MovieKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				0D40F1C41E4349D300B5D77B /* Info.plist */,
-			);
-			path = MovieKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,7 +589,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = MovieKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.zoul.MovieKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -612,7 +601,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = MovieKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.zoul.MovieKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
