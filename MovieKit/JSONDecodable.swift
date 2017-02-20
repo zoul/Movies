@@ -1,8 +1,9 @@
 import Foundation
 
+// TODO: Report parsing errors in detail?
 public protocol JSONDecodable {
 
-    init?(jsonObject: AnyObject)
+    init?(jsonObject: Any)
 }
 
 extension JSONDecodable {

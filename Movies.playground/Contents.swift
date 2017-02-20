@@ -4,8 +4,8 @@ import PlaygroundSupport
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
-let request = MovieListRequest(apiKey: "XXX")
-request.send { response in
-    print(response)
+let service = WebService(apiKey: "XXX")
+service.load(resource: Movie.popular()) { resource in
+    print(resource)
     PlaygroundPage.current.finishExecution()
 }

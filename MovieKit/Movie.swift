@@ -25,9 +25,10 @@ public struct Movie {
     }
 }
 
-extension Movie: JSONDecodable {
+extension Movie : JSONDecodable {
 
-    public init?(jsonObject: AnyObject) {
+    public init?(jsonObject: Any) {
+
         guard let dict = jsonObject as? NSDictionary,
             let id = dict["id"] as? Int,
             let title = dict["title"] as? String,
@@ -36,8 +37,26 @@ extension Movie: JSONDecodable {
             let overview = dict["overview"] as? String,
             let releaseDate = dict["release_date"] as? String
             else { return nil }
-        self.init(id: id, title: title, voteAverage: voteAverage,
-            backdropPath: backdropPath, releaseDate: releaseDate,
-            overview: overview)
+
+        self.id = id
+        self.title = title
+        self.voteAverage = voteAverage
+        self.backdropPath = backdropPath
+        self.overview = overview
+        self.releaseDate = releaseDate
+    }
+}
+
+extension Movie {
+
+    public static func withID(_ id: Int) -> Resource<Movie> {
+        return Resource(url: URL(string: "https://api.themoviedb.org/3/movie/\(id)")!)
+    }
+
+    public static func popular(pageNumber: Int = 1) -> Resource<MovieListPage> {
+        return Resource(
+            url: URL(string: "https://api.themoviedb.org/3/movie/popular")!,
+            urlParams: ["page" : String(pageNumber)]
+        )
     }
 }

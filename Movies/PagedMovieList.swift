@@ -3,8 +3,8 @@ import MovieKit
 
 class PagedMovieList {
 
-    private let apiKey = "XXX"
     private let queue = DispatchQueue(label: "PagedMovieList")
+    private let webService = WebService(apiKey: "XXX")
 
     public private(set) var lastLoadedPageNumber = 0
 
@@ -12,9 +12,8 @@ class PagedMovieList {
         queue.async {
             let nextPageNumber = self.lastLoadedPageNumber+1
             let semaphore = DispatchSemaphore(value: 0)
-            let request = MovieListRequest(apiKey: self.apiKey, pageNumber: nextPageNumber)
             print("Loading page #\(nextPageNumber)")
-            request.send { response in
+            self.webService.load(resource: Movie.popular(pageNumber: nextPageNumber)) { response in
                 switch response {
                     case .success(let response):
                         self.lastLoadedPageNumber = nextPageNumber
