@@ -95,6 +95,7 @@ extension MovieListController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        // swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! MovieListCell
         // If we are close to the bottom of the table, trigger loading more responses.
         if indexPath.row >= movies.count - lazyLoadTreshold {
@@ -115,7 +116,8 @@ extension MovieListController {
         didSelectMovie(movies[indexPath.row])
     }
 
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+        willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? MovieListCell {
             cell.movie = movies[indexPath.row]
         }

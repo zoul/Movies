@@ -30,6 +30,7 @@ extension SearchResultsController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // swiftlint:disable force_cast
         return tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! MovieListCell
     }
 
@@ -45,7 +46,8 @@ extension SearchResultsController {
         didSelectMovie(movies[indexPath.row])
     }
 
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+        willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? MovieListCell {
             cell.movie = movies[indexPath.row]
         }

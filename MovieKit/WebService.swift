@@ -61,7 +61,7 @@ public final class WebService {
     }
 
     func urlRequestForResource<T>(_ resource: Resource<T>) -> URLRequest {
-        let params = mergeDictionaries(["api_key" : apiKey], resource.urlParams)
+        let params = mergeDictionaries(["api_key": apiKey], resource.urlParams)
         let url = URL(string: resource.url.absoluteString + "?" + encodeUrlParams(params: params))!
         return URLRequest(url: url)
     }
@@ -80,7 +80,8 @@ extension WebService {
     }
 
     fileprivate func encodeUrlString(_ string: String) -> String? {
-        let allowedSet =  CharacterSet(charactersIn: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._~")
+        let allowedSet =  CharacterSet(charactersIn:
+            "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._~")
         return string.addingPercentEncoding(withAllowedCharacters: allowedSet)
     }
 

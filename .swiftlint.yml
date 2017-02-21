@@ -1,0 +1,7 @@
+disabled_rules:
+    - force_unwrapping
+    - todo
+    - vertical_parameter_alignment
+variable_name:
+    excluded:
+        - id

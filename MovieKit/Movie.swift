@@ -56,7 +56,7 @@ extension Movie {
     public static func popular(pageNumber: Int = 1) -> Resource<MovieListPage> {
         return Resource(
             url: URL(string: "https://api.themoviedb.org/3/movie/popular")!,
-            urlParams: ["page" : String(pageNumber)]
+            urlParams: ["page": String(pageNumber)]
         )
     }
 }

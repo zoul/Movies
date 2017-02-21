@@ -11,7 +11,7 @@ extension UIImage {
     class func cachedImage(withURL url: URL, completion: @escaping (UIImage?) -> Void) {
         DispatchQueue.global().async {
             let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 10)
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            let task = URLSession.shared.dataTask(with: request) { data, _, _ in
                 if let data = data, let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         completion(image)
