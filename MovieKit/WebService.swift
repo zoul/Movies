@@ -8,7 +8,6 @@ public enum Response<T> {
 // TODO: Improve error reporting
 // TODO: Retry support
 // TODO: Improve caching
-// TODO: Synchronous loading
 // TODO: Internal request queue?
 public final class WebService {
 
@@ -58,6 +57,17 @@ public final class WebService {
             completion(.success(parsedResponse))
 
         }.resume()
+    }
+
+    public func loadSynchronously<T>(resource: Resource<T>) -> Response<T> {
+        let semaphore = DispatchSemaphore(value: 0)
+        var response: Response<T>? = nil
+        load(resource: resource) {
+            response = $0
+            semaphore.signal()
+        }
+        semaphore.wait()
+        return response!
     }
 
     func urlRequestForResource<T>(_ resource: Resource<T>) -> URLRequest {
