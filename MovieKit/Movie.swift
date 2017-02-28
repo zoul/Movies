@@ -63,9 +63,9 @@ extension Movie {
 
 extension Movie {
 
-    public static let template = Movie(id: 297761, title: "Suicide Squad",
-        voteAverage: 5.91, backdropPath: "/ndlQ2Cuc3cjTL7lTynw6I4boP4S.jpg",
-        releaseDate: "2016-08-03", overview: "From DC Comics comes the Suicide Squad, an antihero team " +
-        "of incarcerated supervillains who act as deniable assets for the United States government, undertaking " +
-        "high-risk black ops missions in exchange for commuted prison sentences.")
+    public static let template = Movie(id: 157336, title: "Interstellar", voteAverage: 8.12,
+        backdropPath: "/xu9zaAevzQ5nnrsXN6JcahLnG4i.jpg", releaseDate: "2014-11-05",
+        overview: "Interstellar chronicles the adventures of a group of explorers who " +
+            "make use of a newly discovered wormhole to surpass the limitations on human " +
+            "space travel and conquer the vast distances involved in an interstellar voyage.")
 }
