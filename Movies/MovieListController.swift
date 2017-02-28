@@ -1,10 +1,10 @@
 import UIKit
 import MovieKit
 
-class MovieListController: UITableViewController {
+public class MovieListController: UITableViewController {
 
     var movies: [Movie] = []
-    var didSelectMovie: (Movie) -> Void = { _ in }
+    public var didSelectMovie: (Movie) -> Void = { _ in }
 
     let dataSource = PagedMovieList()
     let lazyLoadTreshold = 10
@@ -12,7 +12,7 @@ class MovieListController: UITableViewController {
 
     let searchVC = UISearchController(searchResultsController: SearchResultsController())
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
 
         super.viewDidLoad()
 
@@ -32,7 +32,7 @@ class MovieListController: UITableViewController {
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if movies.count == 0 {
             loadNextPage()
@@ -74,7 +74,7 @@ class MovieListController: UITableViewController {
 // loaded results.
 extension MovieListController: UISearchResultsUpdating {
 
-    func updateSearchResults(for searchController: UISearchController) {
+    public func updateSearchResults(for searchController: UISearchController) {
         if let resultVC = searchVC.searchResultsController as? SearchResultsController {
             let query = searchVC.searchBar.text?.lowercased() ?? ""
             resultVC.movies = movies.filter { $0.title.lowercased().contains(query) }
@@ -85,15 +85,15 @@ extension MovieListController: UISearchResultsUpdating {
 // Data Source
 extension MovieListController {
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    public override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         // swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! MovieListCell
@@ -104,7 +104,7 @@ extension MovieListController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
 }
@@ -112,11 +112,11 @@ extension MovieListController {
 // Table Delegate
 extension MovieListController {
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         didSelectMovie(movies[indexPath.row])
     }
 
-    override func tableView(_ tableView: UITableView,
+    public override func tableView(_ tableView: UITableView,
         willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? MovieListCell {
             cell.movie = movies[indexPath.row]

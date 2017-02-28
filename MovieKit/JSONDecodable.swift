@@ -8,7 +8,7 @@ public protocol JSONDecodable {
 
 extension JSONDecodable {
 
-    init?(jsonData: Data) {
+    public init?(jsonData: Data) {
         if let object = try? JSONSerialization.jsonObject(with: jsonData, options: []) {
             self.init(jsonObject: object as AnyObject)
         } else {
@@ -16,7 +16,7 @@ extension JSONDecodable {
         }
     }
 
-    init?(jsonString: String) {
+    public init?(jsonString: String) {
         if let data = jsonString.data(using: String.Encoding.utf8) {
             self.init(jsonData: data)
         } else {

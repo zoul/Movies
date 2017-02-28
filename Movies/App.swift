@@ -1,5 +1,6 @@
 import UIKit
 import MovieKit
+import MoviesUI
 
 final class App {
 

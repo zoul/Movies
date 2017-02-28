@@ -1,7 +1,7 @@
 import UIKit
 import MovieKit
 
-class MovieDetailController: UIViewController {
+public class MovieDetailController: UIViewController {
 
     let movie: Movie
 
@@ -10,16 +10,16 @@ class MovieDetailController: UIViewController {
     @IBOutlet var ratingLabel: UILabel!
     @IBOutlet var synopsisTextView: UITextView!
 
-    init(movie: Movie) {
+    public init(movie: Movie) {
         self.movie = movie
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: Bundle(for: MovieDetailController.self))
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("Not supported")
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = movie.title
@@ -30,7 +30,7 @@ class MovieDetailController: UIViewController {
         synopsisTextView.text = movie.overview
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let backdropURL = movie.backdropURL {
             UIImage.cachedImage(withURL: backdropURL) { image in
