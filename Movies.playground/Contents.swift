@@ -1,5 +1,3 @@
-// swiftlint:disable line_length
-
 import UIKit
 import MovieKit
 import MoviesUI
