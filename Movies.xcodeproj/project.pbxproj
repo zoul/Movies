@@ -37,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0D07909B1E659CB100BCDFE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D40F1731E43334200B5D77B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D40F1B21E4349D300B5D77B;
+			remoteInfo = MovieKit;
+		};
 		0D40F1BD1E4349D300B5D77B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D40F1731E43334200B5D77B /* Project object */;
@@ -325,6 +332,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0D07909C1E659CB100BCDFE1 /* PBXTargetDependency */,
 			);
 			name = MoviesUI;
 			productName = MoviesUI;
@@ -484,6 +492,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0D07909C1E659CB100BCDFE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D40F1B21E4349D300B5D77B /* MovieKit */;
+			targetProxy = 0D07909B1E659CB100BCDFE1 /* PBXContainerItemProxy */;
+		};
 		0D40F1BE1E4349D300B5D77B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0D40F1B21E4349D300B5D77B /* MovieKit */;
@@ -799,6 +812,7 @@
 				0DA4098D1E65707500341310 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
