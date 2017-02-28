@@ -17,7 +17,9 @@ public class MovieListController: UITableViewController {
         super.viewDidLoad()
 
         navigationItem.title = "Popular Movies"
-        tableView.register(UINib(nibName: "MovieListCell", bundle: nil), forCellReuseIdentifier: cellID)
+
+        let bundle = Bundle(for: type(of: self))
+        tableView.register(UINib(nibName: "MovieListCell", bundle: bundle), forCellReuseIdentifier: cellID)
 
         searchVC.searchResultsUpdater = self
         searchVC.dimsBackgroundDuringPresentation = false

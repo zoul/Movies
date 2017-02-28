@@ -14,7 +14,8 @@ class SearchResultsController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "MovieListCell", bundle: nil), forCellReuseIdentifier: cellID)
+        let bundle = Bundle(for: type(of: self))
+        tableView.register(UINib(nibName: "MovieListCell", bundle: bundle), forCellReuseIdentifier: cellID)
     }
 }
 
