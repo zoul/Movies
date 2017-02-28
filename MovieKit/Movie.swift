@@ -60,3 +60,12 @@ extension Movie {
         )
     }
 }
+
+extension Movie {
+
+    public static let template = Movie(id: 297761, title: "Suicide Squad",
+        voteAverage: 5.91, backdropPath: "/ndlQ2Cuc3cjTL7lTynw6I4boP4S.jpg",
+        releaseDate: "2016-08-03", overview: "From DC Comics comes the Suicide Squad, an antihero team " +
+        "of incarcerated supervillains who act as deniable assets for the United States government, undertaking " +
+        "high-risk black ops missions in exchange for commuted prison sentences.")
+}
