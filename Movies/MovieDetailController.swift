@@ -12,7 +12,7 @@ public class MovieDetailController: UIViewController {
 
     public init(movie: Movie) {
         self.movie = movie
-        super.init(nibName: nil, bundle: Bundle(for: MovieDetailController.self))
+        super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
 
     public required init?(coder aDecoder: NSCoder) {
