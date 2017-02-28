@@ -5,11 +5,13 @@ import MoviesUI
 final class App {
 
     let navigationVC: UINavigationController
+    let dataSource = PagedMovieList()
 
     init() {
         navigationVC = App.buildNavigationVC()
         let movieListVC = MovieListController()
         movieListVC.didSelectMovie = displayMovieDetail
+        movieListVC.loadOneMorePage = dataSource.loadOneMorePage
         navigationVC.viewControllers = [movieListVC]
     }
 

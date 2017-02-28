@@ -3,10 +3,11 @@ import MovieKit
 
 public class MovieListController: UITableViewController {
 
-    var movies: [Movie] = []
     public var didSelectMovie: (Movie) -> Void = { _ in }
+    public var loadOneMorePage: (@escaping ([Movie]?) -> Void) -> Void = { _ in }
 
-    let dataSource = PagedMovieList()
+    var movies: [Movie] = []
+
     let lazyLoadTreshold = 10
     let cellID = "movie"
 
@@ -42,7 +43,7 @@ public class MovieListController: UITableViewController {
     }
 
     func loadNextPage() {
-        dataSource.loadOneMorePage { newItems in
+        loadOneMorePage { newItems in
             guard let newItems = newItems else { return }
             DispatchQueue.main.async {
                 let insertedIndexes = self.movies.endIndex..<self.movies.endIndex+newItems.count

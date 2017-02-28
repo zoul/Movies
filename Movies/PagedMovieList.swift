@@ -1,14 +1,16 @@
 import Foundation
 import MovieKit
 
-class PagedMovieList {
+public class PagedMovieList {
 
     private let queue = DispatchQueue(label: "PagedMovieList")
     private let webService = WebService(apiKey: "XXX")
 
     public private(set) var lastLoadedPageNumber = 0
 
-    func loadOneMorePage(completion: @escaping ([Movie]?) -> Void) {
+    public init() {}
+
+    public func loadOneMorePage(completion: @escaping ([Movie]?) -> Void) {
         queue.async {
             let nextPageNumber = self.lastLoadedPageNumber+1
             print("Loading page #\(nextPageNumber)")
