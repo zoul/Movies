@@ -186,8 +186,6 @@
 				0D40F1DF1E434B5E00B5D77B /* Movies.playground */,
 				0D40F17D1E43334200B5D77B /* App */,
 				0DA4099A1E65718300341310 /* Movies UI */,
-				0D26646D1E49D68200EC54C3 /* ImageCaching.swift */,
-				0DA409861E65707500341310 /* Info.plist */,
 				0D40F1B41E4349D300B5D77B /* MovieKit */,
 				0D40F17C1E43334200B5D77B /* Products */,
 			);
@@ -238,6 +236,8 @@
 			children = (
 				0D26646B1E49D64D00EC54C3 /* Movie List */,
 				0D26646C1E49D66400EC54C3 /* Movie Detail */,
+				0D26646D1E49D68200EC54C3 /* ImageCaching.swift */,
+				0DA409861E65707500341310 /* Info.plist */,
 			);
 			name = "Movies UI";
 			sourceTree = "<group>";
